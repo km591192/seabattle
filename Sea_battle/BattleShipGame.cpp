@@ -49,8 +49,8 @@ void Ship::createShip(GameBoard& gameBoard, int size, int x, int y, bool horizon
 
 Ship::~Ship()
 {
-if (size_)
-delete cells_;
+	if (size_)
+	delete cells_;
 }
 
 ShipState Ship::getState()
