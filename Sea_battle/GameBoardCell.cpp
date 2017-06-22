@@ -4,11 +4,11 @@
 #include <iostream>
 #include <Windows.h>
 
-GameBoardCell::GameBoardCell(int x, int y, CellState state) /*: x_(x), y_(y), state_(state)*/
+GameBoardCell::GameBoardCell(int x, int y, CellState state) : x_(x), y_(y), state_(state)
 {
-		x_ = x;
+		/*x_ = x;
 		y_ = y;
-		state_ = state;
+		state_ = state;*/
 }
 
 void GameBoardCell::setX(int x)
@@ -26,22 +26,22 @@ void GameBoardCell::setState(CellState state)
 		state_ = state;
 }
 
-CellState GameBoardCell::getState()
+const CellState GameBoardCell::getState()
 {
 		return state_;
 }
 
-int GameBoardCell::getX()
+const int GameBoardCell::getX()
 {
 		return x_;
 }
 
-int GameBoardCell::getY()
+const int GameBoardCell::getY()
 {
 		return y_;
 }
 
-bool GameBoardCell::tryHit(int x, int y)
+const bool GameBoardCell::tryHit(int x, int y)
 {
 		return x == x_ && y == y_ && state_ != HITDECK;
 }
@@ -52,6 +52,7 @@ void GameBoardCell::printField()
 	{
 		std::cout << ' ';
 	}
+	
 	else if (state_ == HITDECK)
 	{
 		std::cout << 'x';
@@ -59,6 +60,67 @@ void GameBoardCell::printField()
 	else if (state_ == DECK)
 	{
 		std::cout << 'd';
+	}
+	else
+	{
+		std::cout << '*';
+	}
+}
+
+void GameBoardCell::setStatecomp(CellState state)
+{
+	statecomp_ = state;
+}
+
+const CellState GameBoardCell::getStatecomp()
+{
+	return statecomp_;
+}
+const bool GameBoardCell::tryHitcomp(int x, int y)
+{
+	return x == x_ && y == y_ && statecomp_ != HITDECK;
+}
+
+void GameBoardCell::printFieldcomp()
+{
+	if (statecomp_ == EMPTY)
+	{
+		std::cout << ' ';
+	}
+	else if (statecomp_ == KILL)
+	{
+		std::cout << 'k';
+	}
+	else if (statecomp_ == HITDECK)
+	{
+		std::cout << 'x';
+	}
+	else if (statecomp_ == DECK)
+	{
+		std::cout << ' '; //' ' !!!
+	}
+	else
+	{
+		std::cout << '*';
+	}
+}
+void GameBoardCell::printFieldcompintheend()
+{
+	if (statecomp_ == EMPTY)
+	{
+		std::cout << ' ';
+	}
+	else if (statecomp_ == KILL)
+	{
+		std::cout << 'k';
+	}
+	else if (statecomp_ == HITDECK)
+	{
+		std::cout << 'x';
+	}
+	else if (statecomp_ == DECK)
+	{
+		std::cout << 'f'; 
 	}
 	else
 	{

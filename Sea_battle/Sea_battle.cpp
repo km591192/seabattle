@@ -5,12 +5,16 @@
 #include "BattleShipGame.h"
 #include "GameBoard.h"
 #include <iostream>
+#include <conio.h>
+#include <fstream>
 
 using namespace std;
 
-BattleShipGame battleShipGame;
 int main(int argc, char** argv)
 {
-	battleShipGame.startGame();
+	std::ofstream log("log.txt", std::ios::out | std::ios::trunc);
+	BattleShipGame battleShipGame(&log);
+	battleShipGame.mode(_getch());
+	log.close();
 	return 0;
 }

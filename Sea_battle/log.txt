@@ -1,0 +1,16 @@
+Time 0.0315833
+Count Destroyed ship =0
+Count Destroyed ship comp =0
+Time 0.0519667
+Count Destroyed ship =0
+Count Destroyed ship comp =0
+Time 0.07625
+Count Destroyed ship =0
+Count Destroyed ship comp =0
+Time 0.11375
+Count Destroyed ship =0
+Count Destroyed ship comp =0
+Time 0.167367
+Count Destroyed ship =0
+Count Destroyed ship comp =1
+Time 0.215533
